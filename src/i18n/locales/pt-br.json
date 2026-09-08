@@ -11,7 +11,7 @@
   "hero": {
     "location": "Belo Horizonte, Brasil (GMT-3)",
     "headline": "Dez anos encontrando onde uma empresa estava vazando dinheiro e tempo, para então construir a solução.",
-    "lede": "Engenheiro de IA e gerente de produto técnico. Eu escopo, construo e coloco no ar sozinho. Recentemente, um agente de WhatsApp recuperando cerca de R$4 milhões por dia para um cliente que não sabia que estava perdendo tanto para um processo manual lento.",
+    "lede": "AI Engineer e Product Manager técnico. Eu escopo, construo e coloco no ar sozinho. Recentemente, um agente de WhatsApp recuperando cerca de R$4 milhões por dia para um cliente que não sabia que estava perdendo tanto para um processo manual lento.",
     "ctaPrimary": "Ver os cases",
     "ctaSecondary": "Entrar em contato",
     "readingLeft": "Antes: atendentes consultavam faturas e enviavam boletos manualmente, um cliente por vez.",
@@ -154,7 +154,7 @@
   },
   "nyxen": {
     "heading": "Também construindo: Nyxen",
-    "bodyPrefix": "Além do trabalho como funcionário, eu toco a",
+    "bodyPrefix": "Além do trabalho CLT, eu toco a",
     "bodySuffix": ", um estúdio boutique de integração de IA para empresas de médio porte no Brasil e na América Latina, as que são pequenas demais para as grandes consultorias e desconfiadas demais das ferramentas genéricas. Faço a call de discovery de manhã e coloco código em produção à tarde, em português, espanhol ou inglês.",
     "linkLabel": "Nyxen",
     "cta": "Falar com a Nyxen sobre um projeto"
@@ -165,7 +165,7 @@
     "reachMe": "Fale comigo",
     "elsewhere": "Outros links",
     "nyxenLink": "Nyxen",
-    "bottomLeft": "Igor Pimenta, engenheiro de IA e gerente de produto técnico",
+    "bottomLeft": "Igor Pimenta, AI Engineer e Product Manager técnico",
     "bottomRight": "Português (nativo), inglês (profissional) e espanhol (intermediário)"
   }
 }
