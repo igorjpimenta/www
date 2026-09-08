@@ -1,72 +1,31 @@
 ---
 import Reading from './Reading.astro'
 
-const cases = [
-  {
-    title: 'Debt collection over WhatsApp, for a multinational agro company',
-    body: `Agents used to query invoices and send payment barcodes by hand, one customer at a
-    time. Every minute a customer waited, they were more likely to abandon the process
-    and buy from a competitor instead. I built a WhatsApp agent that authenticates the
-    customer, pulls the invoice in real time, and sends the barcode with no person involved
-    at any step. Built on AWS, with Lambda and DynamoDB doing the heavy lifting and Python
-    underneath.`,
-    reading: {
-      pos: '90%',
-      left: 'Manual, one at a time',
-      right: '~R$4M/day (~US$750K)',
-    },
-  },
-  {
-    title: "A sales agent for Brazil's largest car dealership group",
-    body: `Leads from the website for BYD and Toyota models were cooling off in the gap between
-    form submission and a callback. Across dozens of locations, sales couldn't close that
-    gap fast enough. The agent I built picks up the lead the moment the form is submitted,
-    moves the conversation to WhatsApp, answers product questions, and books the dealership
-    visit. It runs on Azure, with Databricks handling the data layer. I can't stand behind a
-    clean conversion number here, since the client had no attribution instrumentation in
-    place before this project, but the response-time change itself is real and measured.`,
-    plain: {
-      headline: 'Hours to seconds',
-      sub: 'lead response time, across multiple brands and locations',
-    },
-  },
-  {
-    title: 'A CRM-to-warehouse pipeline for Gal Capital',
-    body: `The sales team ran entirely on Bitrix24, but nobody could see the funnel by team, by
-    broker, or by deal, so leadership was making commission and staffing decisions blind. I
-    built a pipeline from Bitrix24 into BigQuery, feeding two dashboards: one operational,
-    for day-to-day management, and one executive, for the leadership view. Built on GCP,
-    using Cloud Functions, PubSub, and Cloud Scheduler.`,
-    plain: {
-      headline: 'Two dashboards',
-      sub: 'team, broker, and deal-level visibility built from zero',
-    },
-  },
-  {
-    title: 'A support chatbot for Hotmart',
-    body: `The support menu had no real model for what a bot should own versus hand off to a
-    human, so requests just accumulated. I scoped it down deliberately: four features, three
-    languages, chosen by what the data said actually mattered, not by what was easiest to
-    build.`,
-    reading: {
-      pos: '75%',
-      left: 'No clear ownership model',
-      right: '74.5% handled, 43.9% resolved',
-    },
-  },
-]
+interface CaseItem {
+  title: string
+  body: string
+  reading?: { pos: string; left: string; right: string }
+  plain?: { headline: string; sub: string }
+}
+interface Props {
+  t: {
+    heading: string
+    cases: CaseItem[]
+  }
+}
+const { t } = Astro.props
 ---
 
 <section class="border-t border-line bg-panel-deep py-20" id="work">
   <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">Four systems, four leaks that stopped.</h2>
+    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">{t.heading}</h2>
 
     <div class="flex flex-col mt-[52px]">
-      {cases.map((c, i) => (
+      {t.cases.map((c, i) => (
         <div
           class:list={[
             'border-t border-line py-9 grid grid-cols-1 min-[781px]:grid-cols-[1fr_220px] gap-9',
-            i === cases.length - 1 && 'border-b',
+            i === t.cases.length - 1 && 'border-b',
           ]}
         >
           <div>

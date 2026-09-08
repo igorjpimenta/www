@@ -8,18 +8,21 @@ import Pattern from '../components/Pattern.astro'
 import Stack from '../components/Stack.astro'
 import NyxenCallout from '../components/NyxenCallout.astro'
 import Footer from '../components/Footer.astro'
+import en from '../i18n/locales/en.json'
 ---
 
 <BaseLayout
   title="Igor Pimenta, AI engineer and technical product manager"
   description="I scope it, build it, and ship it. Ten years finding where a business is leaking money and time, then building the fix."
+  locale="en"
+  canonicalPath="/"
 >
-  <Nav />
-  <Hero />
-  <Career />
-  <Work />
-  <Pattern />
-  <Stack />
-  <NyxenCallout />
-  <Footer />
+  <Nav t={en.nav} switchHref="/pt-br/" />
+  <Hero t={en.hero} />
+  <Career t={en.career} />
+  <Work t={en.work} />
+  <Pattern t={en.pattern} />
+  <Stack t={en.stack} />
+  <NyxenCallout t={en.nyxen} />
+  <Footer t={en.footer} />
 </BaseLayout>
