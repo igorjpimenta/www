@@ -1,28 +1,26 @@
+---
+interface Props {
+  t: {
+    heading: string
+    paragraphs: string[]
+    statement: string
+  }
+}
+const { t } = Astro.props
+---
+
 <section class="border-t border-line py-20" id="about">
   <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">
-      None of the five roles above said "engineer." Here's why that's the wrong read.
-    </h2>
+    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">{t.heading}</h2>
 
     <div class="space-y-4 mt-[22px]">
-      <p class="text-[17px] leading-[1.7] text-ink-soft max-w-[62ch]">
-        Analyst. NLP specialist. PM for Chatbots. Senior PM for Data Ingestion.
-        Founder. What the timeline above doesn't spell out is that the same person wrote the
-        automation that recovered R$1.9M, the NLP tooling at Take Blip, and the production code behind
-        a system moving R$4M a day, under titles that never said so. I see a problem, talk to
-        whoever is stuck doing it by hand, map the rules underneath it, and build the thing that
-        makes it disappear. That's been true since the first job, not since the one with "founder" in
-        the title.
-      </p>
-      <p class="text-[17px] leading-[1.7] text-ink-soft max-w-[62ch]">
-        That's the actual edge: I can scope a product, define the KPIs,
-        manage a team of developers, and write the implementation myself when that's faster. There's
-        no handoff between the business problem and the technical solution. I am the handoff.
-      </p>
+      {t.paragraphs.map(p => (
+        <p class="text-[17px] leading-[1.7] text-ink-soft max-w-[62ch]">{p}</p>
+      ))}
     </div>
 
     <div class="font-display font-bold text-[clamp(24px,3vw,32px)] leading-[1.2] max-w-[22ch] text-ink mt-8 pt-7 border-t-2 border-ink">
-      I build AI systems that replace the work three people used to do manually.
+      {t.statement}
     </div>
   </div>
 </section>

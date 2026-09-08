@@ -1,59 +1,26 @@
 ---
-const roles = [
-  {
-    years: '2016–2020',
-    title: 'Ânima Educação, data and analytics',
-    body: `Built the data infrastructure for a contact center serving tens of thousands of
-    students, automating reports that used to take a person days to compile by hand.`,
-    result: 'R$1.9M recovered through a churn-reversal program',
-    current: false,
-  },
-  {
-    years: '2020–2021',
-    title: 'Take Blip, NLP and conversational AI',
-    body: `Built bots for six enterprise clients, including Ford, Vale, and PagSeguro, and
-    replaced an intuition-driven discovery process with a data-driven one.`,
-    result: 'Model complexity and API costs both came down',
-    current: false,
-  },
-  {
-    years: '2021–2023',
-    title: 'Hotmart, PM for Chatbots and Data Ingestion',
-    body: `Led a team of four to ship a deliberately narrow four-feature support bot, and
-    eliminated seven manual data-extraction routines in customer service.`,
-    result:
-      '74.5% of main-menu requests handled, 43.9% resolved without a person',
-    current: false,
-  },
-  {
-    years: '2023–2024',
-    title: 'Independent',
-    body: `Stepped back from corporate work for a year to close the gap between the engineer I'd
-    always been and the one I wanted to be recognized as, while delivering two production
-    systems for paying clients.`,
-    result:
-      'A CRM-to-warehouse pipeline and an appointment bot, both shipped solo',
-    current: false,
-  },
-  {
-    years: '2024–present',
-    title: 'Nyxen, founder',
-    body: `Started a boutique AI-integration studio for mid-market companies across Brazil and
-    Latin America. I run the discovery call in the morning and ship the code in the afternoon.`,
-    result: 'Roughly R$4M a day recovered for one client alone',
-    current: true,
-  },
-]
+interface Role {
+  years: string
+  title: string
+  body: string
+  result: string
+  current: boolean
+}
+interface Props {
+  t: {
+    heading: string
+    roles: Role[]
+  }
+}
+const { t } = Astro.props
 ---
 
 <section class="border-t border-line py-20" id="career">
   <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">
-      Five roles. One habit: find the waste, measure it, build the thing that removes it.
-    </h2>
+    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">{t.heading}</h2>
 
     <div class="mt-[52px] border-l-2 border-ink ml-[6px] pl-[34px] flex flex-col gap-11">
-      {roles.map(r => (
+      {t.roles.map(r => (
         <div class="relative">
           <span
             class:list={[

@@ -1,20 +1,31 @@
 ---
 import Reading from './Reading.astro'
+
+interface Props {
+  t: {
+    location: string
+    headline: string
+    lede: string
+    ctaPrimary: string
+    ctaSecondary: string
+    readingLeft: string
+    readingRight: string
+  }
+}
+const { t } = Astro.props
 ---
 
 <header class="pt-[76px] pb-[90px]" id="top">
   <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
     <div class="grid grid-cols-1 min-[761px]:grid-cols-[1fr_auto] gap-6 items-start">
       <h1 class="text-[clamp(36px,5.4vw,58px)] leading-[1.04] max-w-[16ch]">
-        Ten years finding where a business was leaking money and time, then building the fix.
+        {t.headline}
       </h1>
-      <span class="text-sm text-ink-soft whitespace-nowrap">Belo Horizonte, Brazil (GMT-3)</span>
+      <span class="text-sm text-ink-soft whitespace-nowrap">{t.location}</span>
     </div>
 
     <p class="text-lg leading-[1.7] text-ink-soft max-w-[52ch] mt-[26px]">
-      AI engineer and technical product manager. I scope it, build it, and ship it
-      myself. Most recently, a WhatsApp agent recovering roughly R$4M a day (about US$750,000)
-      for a client that didn't know it was losing that much to a slow manual process.
+      {t.lede}
     </p>
 
     <div class="flex gap-5 items-center flex-wrap mt-[34px]">
@@ -22,20 +33,16 @@ import Reading from './Reading.astro'
         class="font-sans text-[15px] font-semibold px-[22px] py-[13px] no-underline inline-block border-[1.5px] border-ink bg-ink text-panel hover:bg-[#3a382e]"
         href="#work"
       >
-        See the case studies
+        {t.ctaPrimary}
       </a>
       <a
         class="font-sans text-[15px] font-semibold px-[22px] py-[13px] no-underline inline-block border-[1.5px] border-ink text-ink hover:bg-panel-deep"
         href="#contact"
       >
-        Get in touch
+        {t.ctaSecondary}
       </a>
     </div>
 
-    <Reading
-      pos="88%"
-      left="Before: agents queried invoices and sent barcodes by hand, one customer at a time."
-      right="R$4M/day recovered, fully automated"
-    />
+    <Reading pos="88%" left={t.readingLeft} right={t.readingRight} />
   </div>
 </header>

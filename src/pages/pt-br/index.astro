@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Nav from '../../components/Nav.astro'
+import Hero from '../../components/Hero.astro'
+import Career from '../../components/Career.astro'
+import Work from '../../components/Work.astro'
+import Pattern from '../../components/Pattern.astro'
+import Stack from '../../components/Stack.astro'
+import NyxenCallout from '../../components/NyxenCallout.astro'
+import Footer from '../../components/Footer.astro'
+import pt from '../../i18n/locales/pt-br.json'
+---
+
+<BaseLayout
+  title="Igor Pimenta, AI Engineer e Product Manager técnico"
+  description="Eu escopo, construo e coloco no ar. Dez anos encontrando onde uma empresa está vazando dinheiro e tempo, e construindo a solução."
+  locale="pt-BR"
+  canonicalPath="/pt-br/"
+>
+  <Nav t={pt.nav} switchHref="/" />
+  <Hero t={pt.hero} />
+  <Career t={pt.career} />
+  <Work t={pt.work} />
+  <Pattern t={pt.pattern} />
+  <Stack t={pt.stack} />
+  <NyxenCallout t={pt.nyxen} />
+  <Footer t={pt.footer} />
+</BaseLayout>

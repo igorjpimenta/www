@@ -1,20 +1,30 @@
+---
+interface Props {
+  t: {
+    heading: string
+    bodyPrefix: string
+    bodySuffix: string
+    linkLabel: string
+    cta: string
+  }
+}
+const { t } = Astro.props
+---
+
 <section class="border-t border-line py-20">
   <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">Also building: Nyxen</h2>
+    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">{t.heading}</h2>
     <div class="mt-12 p-8 bg-panel-deep flex flex-col gap-5 items-start">
       <p class="text-[15.5px] leading-[1.7] text-ink-soft max-w-[60ch]">
-        Alongside employment, I run{' '}
+        {t.bodyPrefix}{' '}
         <a
           class="text-ink underline underline-offset-[3px]"
           href="https://nyxen.ai"
           target="_blank"
           rel="noopener"
         >
-          Nyxen
-        </a>, a boutique AI-integration studio for mid-market companies across Brazil and Latin
-        America, the ones too small for the big consultancies and too skeptical of generic tools.
-        I run the discovery call in the morning and ship production code in the afternoon, in
-        Portuguese, Spanish, or English.
+          {t.linkLabel}
+        </a>{t.bodySuffix}
       </p>
       <a
         class="font-sans text-[15px] font-semibold px-[22px] py-[13px] no-underline inline-block border-[1.5px] border-brass bg-brass text-panel hover:bg-brass-deep"
@@ -22,7 +32,7 @@
         target="_blank"
         rel="noopener"
       >
-        Talk to Nyxen about a project
+        {t.cta}
       </a>
     </div>
   </div>

@@ -1,0 +1,171 @@
+{
+  "nav": {
+    "wordmark": "Igor Pimenta",
+    "career": "Carreira",
+    "work": "Projetos",
+    "about": "Sobre",
+    "stack": "Stack",
+    "contact": "Contato",
+    "switchLang": "English"
+  },
+  "hero": {
+    "location": "Belo Horizonte, Brasil (GMT-3)",
+    "headline": "Dez anos encontrando onde uma empresa estava vazando dinheiro e tempo, para então construir a solução.",
+    "lede": "AI Engineer e Product Manager técnico. Eu escopo, construo e coloco no ar sozinho. Recentemente, um agente de WhatsApp recuperando cerca de R$4 milhões por dia para um cliente que não sabia que estava perdendo tanto para um processo manual lento.",
+    "ctaPrimary": "Ver os cases",
+    "ctaSecondary": "Entrar em contato",
+    "readingLeft": "Antes: atendentes consultavam faturas e enviavam boletos manualmente, um cliente por vez.",
+    "readingRight": "R$4 mi/dia recuperados, totalmente automatizado"
+  },
+  "career": {
+    "heading": "Cinco cargos. Um hábito: encontrar o desperdício, medir e construir o que o elimina.",
+    "roles": [
+      {
+        "years": "2016–2020",
+        "title": "Ânima Educação, dados e analytics",
+        "body": "Construí a infraestrutura de dados para um contact center que atendia dezenas de milhares de alunos, automatizando relatórios que antes levavam dias para uma pessoa compilar manualmente.",
+        "result": "R$1,9 mi recuperados com um programa de reversão de churn",
+        "current": false
+      },
+      {
+        "years": "2020–2021",
+        "title": "Take Blip, NLP e IA conversacional",
+        "body": "Construí bots para seis clientes enterprise, incluindo Ford, Vale e PagSeguro, e substituí um processo de descoberta guiado por intuição por um guiado por dados.",
+        "result": "Complexidade dos modelos e custo de API caíram",
+        "current": false
+      },
+      {
+        "years": "2021–2023",
+        "title": "Hotmart, PM de Chatbots e Ingestão de Dados",
+        "body": "Liderei um time de quatro pessoas para lançar um bot de suporte deliberadamente enxuto, com quatro funcionalidades, e eliminei sete rotinas manuais de extração de dados no atendimento.",
+        "result": "74,5% das solicitações do menu principal atendidas, 43,9% resolvidas sem humano",
+        "current": false
+      },
+      {
+        "years": "2023–2024",
+        "title": "Independente",
+        "body": "Me afastei do mercado corporativo por um ano para fechar a lacuna entre o engenheiro que eu sempre fui e o engenheiro que eu queria ser reconhecido como, entregando dois sistemas em produção para clientes pagantes.",
+        "result": "Um pipeline de CRM para data warehouse e um bot de agendamento, ambos entregues sozinho",
+        "current": false
+      },
+      {
+        "years": "2024–presente",
+        "title": "Nyxen, fundador",
+        "body": "Fundei um estúdio boutique de integração de IA para empresas de médio porte no Brasil e na América Latina. Faço a call de discovery de manhã e coloco o código no ar à tarde.",
+        "result": "Cerca de R$4 mi por dia recuperados só com um cliente",
+        "current": true
+      }
+    ]
+  },
+  "work": {
+    "heading": "Quatro sistemas, quatro vazamentos que pararam.",
+    "cases": [
+      {
+        "title": "Cobrança via WhatsApp, para uma multinacional do agronegócio",
+        "body": "Atendentes consultavam faturas e enviavam boletos manualmente, um cliente por vez. A cada minuto de espera, o cliente ficava mais propenso a abandonar o processo e comprar de um concorrente. Construí um agente de WhatsApp que autentica o cliente, consulta a fatura em tempo real e envia o boleto sem nenhuma pessoa envolvida em qualquer etapa. Construído em AWS, com Lambda e DynamoDB fazendo o trabalho pesado e Python por baixo.",
+        "reading": {
+          "pos": "90%",
+          "left": "Manual, um por vez",
+          "right": "~R$4 mi/dia"
+        }
+      },
+      {
+        "title": "Um agente de vendas para o maior grupo de concessionárias do Brasil",
+        "body": "Leads do site para modelos BYD e Toyota esfriavam no intervalo entre o envio do formulário e o retorno da equipe. Em dezenas de unidades, o time de vendas não conseguia fechar esse intervalo rápido o suficiente. O agente que construí assume o lead no momento do envio do formulário, move a conversa para o WhatsApp, responde perguntas sobre os produtos e agenda a visita à concessionária. Roda em Azure, com Databricks na camada de dados. Não tenho um número limpo de conversão para defender aqui, já que o cliente não tinha instrumentação de atribuição antes deste projeto, mas a mudança no tempo de resposta é real e foi medida.",
+        "plain": {
+          "headline": "De horas para segundos",
+          "sub": "tempo de resposta ao lead, em múltiplas marcas e unidades"
+        }
+      },
+      {
+        "title": "Um pipeline de CRM para data warehouse na Gal Capital",
+        "body": "O time de vendas operava inteiramente no Bitrix24, mas ninguém enxergava o funil por equipe, por corretor ou por negociação, então a liderança tomava decisões de comissão e de equipe às cegas. Construí um pipeline do Bitrix24 para o BigQuery, alimentando dois dashboards: um operacional, para a gestão do dia a dia, e um executivo, para a visão da liderança. Construído em GCP, usando Cloud Functions, PubSub e Cloud Scheduler.",
+        "plain": {
+          "headline": "Dois dashboards",
+          "sub": "visibilidade por equipe, corretor e negociação, construída do zero"
+        }
+      },
+      {
+        "title": "Um chatbot de suporte para a Hotmart",
+        "body": "O menu de suporte não tinha um modelo claro do que o bot deveria resolver versus repassar para um humano, então as solicitações só se acumulavam. Escopei de forma deliberadamente enxuta: quatro funcionalidades, três idiomas, escolhidos pelo que os dados mostravam que realmente importava, não pelo que era mais fácil de construir.",
+        "reading": {
+          "pos": "75%",
+          "left": "Sem modelo claro de responsabilidade",
+          "right": "74,5% atendidas, 43,9% resolvidas"
+        }
+      }
+    ]
+  },
+  "pattern": {
+    "heading": "Nenhum dos cinco cargos acima dizia \"engenheiro\". Veja por que essa é a leitura errada.",
+    "paragraphs": [
+      "Analista. Especialista em NLP. PM de Chatbots. PM Sênior de Ingestão de Dados. Fundador. O que a linha do tempo acima não deixa claro é que foi a mesma pessoa que escreveu a automação que recuperou R$1,9 mi, as ferramentas de NLP na Take Blip e o código em produção por trás de um sistema que movimenta R$4 mi por dia, sob cargos que nunca disseram isso. Eu vejo um problema, converso com quem está travado fazendo aquilo manualmente, mapeio as regras por trás dele e construo o que faz o problema desaparecer. Isso é verdade desde o primeiro emprego, não desde o cargo com \"fundador\" no título.",
+      "Essa é a vantagem de verdade: eu consigo escopar um produto, definir os KPIs, gerenciar um time de desenvolvedores e escrever a implementação eu mesmo quando isso é mais rápido. Não existe repasse entre o problema de negócio e a solução técnica. Eu sou o repasse."
+    ],
+    "statement": "Eu construo sistemas de IA que substituem o trabalho que três pessoas faziam manualmente."
+  },
+  "stack": {
+    "heading": "O que eu uso, e onde já coloquei em produção.",
+    "groups": [
+      {
+        "title": "Engenharia",
+        "rows": [
+          [
+            "Agentes de IA e sistemas multiagente",
+            "Sistema interno de propostas da Nyxen"
+          ],
+          [
+            "Integração com LLMs",
+            "OpenAI, Anthropic, Kimi, escolhidos por caso de uso"
+          ],
+          ["Python", "NLP, pipelines e trabalho de ML ao longo da carreira"],
+          ["Node.js", "Portal de clientes da Nyxen, integração da Gal Capital"],
+          ["React e TypeScript", "produtos voltados ao cliente"],
+          ["IA conversacional e NLP", "cinco anos construindo na Blip"]
+        ]
+      },
+      {
+        "title": "Cloud",
+        "rows": [
+          ["AWS", "o sistema de cobrança"],
+          ["GCP", "BigQuery, Cloud Functions, PubSub"],
+          ["Azure", "workloads em Databricks"]
+        ]
+      },
+      {
+        "title": "Dados",
+        "rows": [
+          ["BigQuery", "o data warehouse da Gal Capital"],
+          ["Databricks", "pipelines de ML em Azure"],
+          ["Design de pipeline bronze e silver", "integração Zendesk e Blip"],
+          ["Integrações de CRM", "Bitrix24, Blip Desk, Zendesk"]
+        ]
+      },
+      {
+        "title": "Produto",
+        "rows": [
+          ["Estratégia e roadmap", "Hotmart, Take Blip"],
+          ["Liderança de equipe", "quatro liderados diretos na Hotmart"],
+          ["Desenho de KPIs e OKRs", "Ânima, Blip, Hotmart"],
+          ["Tradução entre áreas e stakeholders", "ao longo de toda a carreira"]
+        ]
+      }
+    ]
+  },
+  "nyxen": {
+    "heading": "Também construindo: Nyxen",
+    "bodyPrefix": "Além do emprego, eu toco a",
+    "bodySuffix": ", um estúdio boutique de integração de IA para empresas de médio porte no Brasil e na América Latina, as que são pequenas demais para as grandes consultorias e desconfiadas demais das ferramentas genéricas. Faço a call de discovery de manhã e coloco código em produção à tarde, em português, espanhol ou inglês.",
+    "linkLabel": "Nyxen",
+    "cta": "Falar com a Nyxen sobre um projeto"
+  },
+  "footer": {
+    "heading": "Vamos conversar.",
+    "body": "Aberto a vagas remotas de engenharia de IA, e a projetos de consultoria selecionados através da Nyxen. Baseado em Belo Horizonte, Brasil (GMT-3), disponível agora.",
+    "reachMe": "Fale comigo",
+    "elsewhere": "Outros links",
+    "nyxenLink": "Nyxen",
+    "bottomLeft": "Igor Pimenta, AI Engineer e Product Manager técnico",
+    "bottomRight": "Português (nativo), inglês (profissional) e espanhol (intermediário)"
+  }
+}
