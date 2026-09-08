@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Instrumentation-panel theme — Tailwind v4 @theme block.
+   Custom utilities derived from these vars: bg-panel, text-ink,
+   text-rust, border-line, font-display, etc. */
+@theme {
+  --color-panel: #eeece4;
+  --color-panel-deep: #dcd9cc;
+  --color-line: #c7c3b3;
+
+  --color-ink: #201f1a;
+  --color-ink-soft: #5c584c;
+
+  --color-rust: #a4462c;
+  --color-verdant: #3f6b47;
+  --color-brass: #755c2c;
+  --color-brass-deep: #634b21;
+
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-panel);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+}

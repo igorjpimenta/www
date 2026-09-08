@@ -1,0 +1,78 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: sync to S3 + invalidate CloudFront + purge Cloudflare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Auth first, not after the build: deploy config (bucket name,
+      # distribution id, Cloudflare zone/token) lives in SSM Parameter
+      # Store under /igorpimenta-www/prod/, not GitHub secrets, and
+      # reading SSM needs AWS credentials.
+      - name: Configure AWS credentials (OIDC, no long-lived keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Fetch deploy config from SSM
+        run: |
+          params=$(aws ssm get-parameters-by-path \
+            --path "/igorpimenta-www/prod/" \
+            --with-decryption \
+            --query "Parameters[].{Name:Name,Value:Value}" \
+            --output json)
+
+          echo "$params" | jq -r '.[] | select(.Name | endswith("CF_API_TOKEN")) | .Value' | while read -r v; do
+            echo "::add-mask::$v"
+          done
+
+          echo "$params" | jq -r '.[] | "\(.Name | split("/") | last)=\(.Value)"' >> "$GITHUB_ENV"
+
+      - name: Build
+        run: npm run build
+
+      - name: Sync build output to S3
+        run: |
+          aws s3 sync dist/ "s3://${{ env.S3_BUCKET_NAME }}" --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
+
+      # igorpimenta.com is proxied through Cloudflare in front of
+      # CloudFront (not DNS-only) — Cloudflare holds its own independent
+      # edge cache that the CloudFront invalidation above never touches.
+      - name: Purge Cloudflare cache
+        run: |
+          curl -sf -X POST "https://api.cloudflare.com/client/v4/zones/${{ env.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ env.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
