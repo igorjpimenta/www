@@ -1,0 +1,21 @@
+---
+interface Props {
+  pos: string
+  left: string
+  right: string
+  compact?: boolean
+}
+const { pos, left, right, compact = false } = Astro.props
+---
+
+<div class={compact ? 'w-full' : 'mt-14 max-w-[640px]'}>
+  <div class="relative h-[6px] bg-[linear-gradient(to_right,#a4462c,#dcd9cc_48%,#dcd9cc_52%,#3f6b47)]">
+    <div class="absolute -top-[7px] w-[2px] h-5 bg-brass" style={`left:${pos}`}>
+      <span class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-[9px] h-[9px] rounded-full bg-brass"></span>
+    </div>
+  </div>
+  <div class="flex justify-between mt-[14px] gap-5">
+    <span class={`text-ink-soft leading-[1.5] max-w-[16ch] ${compact ? 'text-[12.5px]' : 'text-[13.5px]'}`}>{left}</span>
+    <span class={`text-ink font-semibold leading-[1.5] max-w-[20ch] text-right ${compact ? 'text-[12.5px]' : 'text-[13.5px]'}`}>{right}</span>
+  </div>
+</div>

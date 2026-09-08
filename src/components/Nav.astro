@@ -1,0 +1,30 @@
+---
+const links = [
+  { href: '#career', label: 'Career' },
+  { href: '#work', label: 'Work' },
+  { href: '#about', label: 'About' },
+  { href: '#stack', label: 'Stack' },
+]
+---
+
+<nav class="bg-panel border-b border-line sticky top-0 z-20">
+  <div class="max-w-[1040px] mx-auto px-5 sm:px-8 flex items-center justify-between h-[68px]">
+    <a class="font-display font-bold text-[21px] text-ink no-underline" href="#top">Igor Pimenta</a>
+    <div class="flex gap-[30px] items-center">
+      {links.map(l => (
+        <a
+          class="text-[14.5px] text-ink-soft no-underline hover:text-ink max-[679px]:hidden"
+          href={l.href}
+        >
+          {l.label}
+        </a>
+      ))}
+      <a
+        class="text-[14.5px] text-ink no-underline border-b-2 border-ink pb-[2px]"
+        href="#contact"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>

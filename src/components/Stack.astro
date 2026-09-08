@@ -1,0 +1,65 @@
+---
+const groups = [
+  {
+    title: 'Engineering',
+    rows: [
+      ['AI agents and multi-agent systems', "Nyxen's internal proposal system"],
+      ['LLM integration', 'OpenAI, Anthropic, Kimi, chosen per use case'],
+      ['Python', 'NLP, pipelines, and ML work throughout'],
+      ['Node.js', "Nyxen's client portal, the Gal Capital integration"],
+      ['React and TypeScript', 'client-facing products'],
+      ['Conversational AI and NLP', 'five years building on Blip'],
+    ],
+  },
+  {
+    title: 'Cloud',
+    rows: [
+      ['AWS', 'the debt-collection system'],
+      ['GCP', 'BigQuery, Cloud Functions, PubSub'],
+      ['Azure', 'Databricks workloads'],
+    ],
+  },
+  {
+    title: 'Data',
+    rows: [
+      ['BigQuery', 'the Gal Capital warehouse'],
+      ['Databricks', 'Azure-based ML pipelines'],
+      ['Bronze and silver pipeline design', 'Zendesk and Blip integration'],
+      ['CRM integrations', 'Bitrix24, Blip Desk, Zendesk'],
+    ],
+  },
+  {
+    title: 'Product',
+    rows: [
+      ['Strategy and roadmap', 'Hotmart, Take Blip'],
+      ['Team leadership', 'four direct reports at Hotmart'],
+      ['KPI and OKR design', 'Ânima, Blip, Hotmart'],
+      ['Stakeholder translation', 'throughout my career'],
+    ],
+  },
+]
+---
+
+<section class="border-t border-line bg-panel-deep py-20" id="stack">
+  <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
+    <h2 class="text-[clamp(28px,3.6vw,38px)] max-w-[20ch]">What I reach for, and where it's shipped.</h2>
+
+    <div class="mt-12 flex flex-col gap-11">
+      {groups.map(g => (
+        <div>
+          <h4 class="font-sans font-bold text-base mb-1.5">{g.title}</h4>
+          <table class="w-full border-collapse">
+            <tbody>
+              {g.rows.map(([skill, evidence]) => (
+                <tr class="border-t border-line">
+                  <td class="py-[13px] text-[14.5px] text-ink font-semibold w-[46%]">{skill}</td>
+                  <td class="py-[13px] text-[14.5px] text-ink-soft text-right">{evidence}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
