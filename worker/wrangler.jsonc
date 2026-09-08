@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/wrangler.jsonc.schema.json",
+  "name": "igorpimenta-www-lang-router",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "account_id": "5a3237a25c2722300233292a953ab0ae",
+  "routes": [
+    { "pattern": "igorpimenta.com/*", "zone_name": "igorpimenta.com" },
+    { "pattern": "www.igorpimenta.com/*", "zone_name": "igorpimenta.com" }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
