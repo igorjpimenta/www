@@ -17,7 +17,7 @@ jobs:
   deploy:
     name: sync to S3 + invalidate CloudFront + purge Cloudflare
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -63,9 +63,26 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation \
+          id=$(aws cloudfront create-invalidation \
             --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" \
-            --paths "/*"
+            --paths "/*" \
+            --query "Invalidation.Id" --output text)
+          echo "INVALIDATION_ID=$id" >> "$GITHUB_ENV"
+
+      # Wait for the invalidation to actually finish, not just submit —
+      # "Completed" from create-invalidation only means AWS accepted the
+      # request, not that every edge location has it yet. Without this
+      # wait, the Cloudflare purge below can run while CloudFront is
+      # still serving a stale object at the edge Cloudflare happens to
+      # hit, caching that stale response for a full TTL even though the
+      # purge itself "succeeded." Confirmed live: Age: 400s+ through
+      # Cloudflare on cf-cache-status: DYNAMIC minutes after a deploy,
+      # while hitting CloudFront directly was already a fresh Miss.
+      - name: Wait for CloudFront invalidation to complete
+        run: |
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --id "${{ env.INVALIDATION_ID }}"
 
       # igorpimenta.com is proxied through Cloudflare in front of
       # CloudFront (not DNS-only) — Cloudflare holds its own independent
