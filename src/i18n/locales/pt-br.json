@@ -154,7 +154,7 @@
   "nyxen": {
     "heading": "Também construindo: Nyxen",
     "bodyPrefix": "Além do emprego, eu toco a",
-    "bodySuffix": ", um estúdio boutique de integração de IA para empresas de médio porte no Brasil e na América Latina, as que são pequenas demais para as grandes consultorias e desconfiadas demais das ferramentas genéricas. Faço a call de discovery de manhã e coloco código em produção à tarde, em português, espanhol ou inglês.",
+    "bodySuffix": ", um estúdio boutique de integração de IA para empresas de médio porte no Brasil e na América Latina, as que são pequenas demais para as grandes consultorias e desconfiadas demais das ferramentas genéricas. Faço a call de discovery de manhã e coloco código em produção à tarde, em português ou inglês.",
     "linkLabel": "Nyxen",
     "cta": "Falar com a Nyxen sobre um projeto"
   },
@@ -165,6 +165,6 @@
     "elsewhere": "Outros links",
     "nyxenLink": "Nyxen",
     "bottomLeft": "Igor Pimenta, AI Engineer e Product Manager técnico",
-    "bottomRight": "Português (nativo), inglês (profissional) e espanhol (intermediário)"
+    "bottomRight": "Português (nativo), inglês (profissional)"
   }
 }
