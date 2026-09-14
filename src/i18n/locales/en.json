@@ -151,7 +151,7 @@
   "nyxen": {
     "heading": "Also building: Nyxen",
     "bodyPrefix": "Alongside employment, I run",
-    "bodySuffix": ", a boutique AI-integration studio for mid-market companies across Brazil and Latin America, the ones too small for the big consultancies and too skeptical of generic tools. I run the discovery call in the morning and ship production code in the afternoon, in Portuguese, Spanish, or English.",
+    "bodySuffix": ", a boutique AI-integration studio for mid-market companies across Brazil and Latin America, the ones too small for the big consultancies and too skeptical of generic tools. I run the discovery call in the morning and ship production code in the afternoon, in Portuguese or English.",
     "linkLabel": "Nyxen",
     "cta": "Talk to Nyxen about a project"
   },
@@ -162,6 +162,6 @@
     "elsewhere": "Elsewhere",
     "nyxenLink": "Nyxen",
     "bottomLeft": "Igor Pimenta, AI engineer and technical product manager",
-    "bottomRight": "Portuguese (native), English (professional), and Spanish (working)"
+    "bottomRight": "Portuguese (native), English (professional)"
   }
 }
